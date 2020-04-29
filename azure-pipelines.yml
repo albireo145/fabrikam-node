@@ -40,11 +40,13 @@ steps:
 # - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
 #   artifact: drop
 
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     PathtoPublish: '$(System.DefaultWorkingDirectory)'
-- task: PublishPipelineArtifact@1
+- task: PublishBuildArtifacts@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)'
     artifact: 'webapp'
-    publishLocation: 'pipeline'
+
+# - task: PublishPipelineArtifact@1
+#   inputs:
+#     targetPath: '$(Pipeline.Workspace)'
+#     artifact: 'webapp'
+#     publishLocation: 'pipeline'
