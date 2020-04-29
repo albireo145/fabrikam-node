@@ -39,6 +39,12 @@ steps:
 #     replaceExistingArchive: true
 # - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
 #   artifact: drop
-- task: PublishBuildArtifacts@1
+
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#     PathtoPublish: '$(System.DefaultWorkingDirectory)'
+- task: PublishPipelineArtifact@1
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)'
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'webapp'
+    publishLocation: 'pipeline'
