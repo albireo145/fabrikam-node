@@ -17,7 +17,7 @@ app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
 
 // view engine setup
-
+app.set('port', 8099)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
